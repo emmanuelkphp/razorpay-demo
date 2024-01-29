@@ -46,7 +46,7 @@
                                         data-key="{{ env('RAZORPAY_API_KEY') }}"
                                         data-amount="100"
                                         data-buttontext="Pay 100 INR"
-                                        data-name="Laravelia"
+                                        data-name="Emmanuel"
                                         data-description="A demo razorpay payment"
                                         data-image="https://www.laravelia.com/storage/logo.png"
                                         data-prefill.name="Mahedi Hasan"
@@ -56,7 +56,6 @@
                                 </form>
                             </div>
                         </div>
-  
                     </div>
                 </div>
             </div>
