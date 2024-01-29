@@ -1,5 +1,8 @@
 <?php
-  
+/* 
+key_id: rzp_test_MoBRjKj7CYN6b1
+key_secret: P87VZ61IakhtPHuEfASJWM95
+*/
 namespace App\Http\Controllers;
   
 use Illuminate\Http\Request;
@@ -16,28 +19,18 @@ class RazorpayController extends Controller
      *
      * @return response()
      */
-    public function index()
-    {        
+    public function index(){        
         return view('razorpay.index');
     }
   
-    /**
-     * Write code on Method
-     *
-     * @return response()
-     */
-    public function store(Request $request)
-    {
-        $input = $request->all();
-  
-        $api = new Api(env('RAZORPAY_API_KEY'), env('RAZORPAY_API_SECRET'));
-  
-        $payment = $api->payment->fetch($input['razorpay_payment_id']);
+    public function store(Request $request){
+        $input      = $request->all();
+        $api        = new Api(env('RAZORPAY_API_KEY'), env('RAZORPAY_API_SECRET'));
+        $payment    = $api->payment->fetch($input['razorpay_payment_id']);
   
         if(count($input)  && !empty($input['razorpay_payment_id'])) {
             try {
-                //$response = $api->payment->fetch($input['razorpay_payment_id'])->capture(array('amount'=>$payment['amount'])); 
-               
+
                 $response = $api->payment->fetch($input['razorpay_payment_id'])->capture([
                     'amount' => $payment['amount']
                 ]);

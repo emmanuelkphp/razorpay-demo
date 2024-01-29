@@ -52,7 +52,7 @@
                                         data-prefill.name="Mahedi Hasan"
                                         data-prefill.email="mahedy150101@gmail.com"
                                         data-theme.color="#ff7529">
-                                </script>
+                                    </script>
                                 </form>
                             </div>
                         </div>
